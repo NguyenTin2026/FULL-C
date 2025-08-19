@@ -1,554 +1,350 @@
-// T?NG H?P L?P TR?NH C++ t? Cõ B?n ğ?n Nâng Cao
-// 1. Cõ B?n
-/* #include <iostream>          // Thı vi?n nh?p xu?t
+// ===============================
+// Tá»”NG Há»¢P Láº¬P TRÃŒNH C++ Tá»ª CÆ  Báº¢N Äáº¾N NÃ‚NG CAO
+// ===============================
+
+// 1. CÆ  Báº¢N
+/*
+#include <iostream>          // ThÆ° viá»‡n chuáº©n cho nháº­p/xuáº¥t
 using namespace std;
 
 int main() {
-    int x = 5;
-    cout << "I am currently a junior at Drew uni starting to learn C++ Programming" + x;    // Xu?t d? li?u
-    cin >> x ;
+    int x = 5;  
+    // Xuáº¥t dá»¯ liá»‡u ra mÃ n hÃ¬nh
+    cout << "I am currently a junior at Drew uni starting to learn C++ Programming. x = " << x << endl;
+    
+    // Nháº­p dá»¯ liá»‡u tá»« bÃ n phÃ­m
+    cin >> x;  
     return 0;
-}  */
-/*  Ğ? Ch?y L?nh C++ Theo 2 bı?c sau: 
-- Bı?c 1: g? l?nh g++ tên_file.cpp -o tên_file.exe
-- Bı?c 2: ./tên_file.exe
-    Ğ? c?p nh?t l?i ch?y l?i code c?ng tıõng t?:
-- Bı?c 1: g? l?nh g++ tên_file.cpp -o tên_file.exe
-- Bı?c 2: ./tên_file.exe
-==> K?t qu? 
-LİU ?: .cpp là m? ngu?n (code C++).
-       .exe là chıõng tr?nh th?c thi (sau khi biên d?ch).
-==> Không bao gi? ğ?t output -o trùng v?i input .cpp   */ 
+}
 
-// 2. Khai Báo Bi?n và Ki?u D? Li?u
-/* #include <iostream>      // Thı vi?n nh?p/xu?t
-using namespace std;     // Không c?n ghi std:: trı?c cout, cin
+// Cháº¡y lá»‡nh C++:
+// BÆ°á»›c 1: g++ ten_file.cpp -o ten_file.exe
+// BÆ°á»›c 2: ./ten_file.exe
+// LÆ°u Ã½:
+// - .cpp lÃ  file nguá»“n (code C++)
+// - .exe lÃ  file thá»±c thi
+// - KhÃ´ng bao giá» Ä‘áº·t output -o trÃ¹ng vá»›i input .cpp
+*/
+
+
+// 2. KHAI BÃO BIáº¾N VÃ€ KIá»‚U Dá»® LIá»†U
+/*
+#include <iostream>
+using namespace std;
+
 int main() {
-    // Khai báo bi?n
-    int a = 10;                     // S? nguyên
-    float b = 3.5;                  // S? th?c, 4 bytes, ğ? chính xác ~7 ch? s?
-    double c = 2.71828;             // S? th?c chính xác kép, 8 bytes, ~15 ch? s?
-    char d = 'T';                   // K? t?
-    string str = "Xin chào bé Tin Tin nhé!";    // Chu?i k? t?
-    bool isTinTin = true;           // Giá tr? boolean (true/false)
-    const double PI = 3.14159;      // H?ng s? s? th?c, không th? thay ğ?i
-    // Xu?t giá tr? ra màn h?nh
+    int a = 10;                      // Sá»‘ nguyÃªn
+    float b = 3.5;                   // Sá»‘ thá»±c, 4 bytes, chÃ­nh xÃ¡c ~7 chá»¯ sá»‘
+    double c = 2.71828;              // Sá»‘ thá»±c chÃ­nh xÃ¡c kÃ©p, 8 bytes, ~15 chá»¯ sá»‘
+    char d = 'T';                     // KÃ½ tá»±
+    string str = "Xin chÃ o báº¡n Tin Tin!"; // Chuá»—i kÃ½ tá»±
+    bool isTinTin = true;             // GiÃ¡ trá»‹ boolean
+    const double PI = 3.14159;        // Háº±ng sá»‘, khÃ´ng thay Ä‘á»•i Ä‘Æ°á»£c
+
     cout << "a = " << a << ", b = " << b << ", c = " << c << endl;
     cout << "d = " << d << ", str = " << str << ", isTinTin = " << isTinTin << endl;
     cout << "PI = " << PI << endl;
-    return 0;  // K?t thúc chıõng tr?nh
-}
-// Chú thích: endl dùng ğ? xu?ng d?ng(newline) tıõng tı nhı \n  */
 
-// 3. Toán T?
-/* #include <iostream>  // Thı vi?n chu?n cho input/output
+    return 0;
+}
+// ChÃº thÃ­ch:
+// endl dÃ¹ng Ä‘á»ƒ xuá»‘ng dÃ²ng (tÆ°Æ¡ng tá»± \n)
+*/
+
+
+// 3. TOÃN Tá»¬
+/*
+#include <iostream>
 using namespace std;
 
 int main() {
-    // ===============================
-    // 1?? S? H?C (Arithmetic Operators)
-    // ===============================
-    // Toán t?: +, -, *, /, %, ++, --
     int x = 5, y = 2;
 
-    cout << "x + y = " << (x + y) << endl;   // C?ng: 5 + 2 = 7
-    cout << "x - y = " << (x - y) << endl;   // Tr?: 5 - 2 = 3
-    cout << "x * y = " << (x * y) << endl;   // Nhân: 5 * 2 = 10
-    cout << "x / y = " << (x / y) << endl;   // Chia nguyên: 5 / 2 = 2
-    cout << "x % y = " << (x % y) << endl;   // Chia l?y dı: 5 % 2 = 1
+    // ToÃ¡n tá»­ sá»‘ há»c
+    cout << "x + y = " << x + y << endl;
+    cout << "x - y = " << x - y << endl;
+    cout << "x * y = " << x * y << endl;
+    cout << "x / y = " << x / y << endl;   // Chia nguyÃªn
+    cout << "x % y = " << x % y << endl;   // Chia láº¥y dÆ°
+    cout << "x++ = " << x++ << endl;       // Háº­u tá»‘: xuáº¥t x rá»“i má»›i tÄƒng
+    cout << "++y = " << ++y << endl;       // Tiá»n tá»‘: tÄƒng rá»“i má»›i xuáº¥t
 
-    cout << "x++ = " << x++ << endl; // H?u t? ++: in x r?i m?i tãng (5), x bây gi? = 6
-    cout << "++y = " << ++y << endl; // Ti?n t? ++: tãng y trı?c r?i in (3)
-    cout << "x-- = " << x-- << endl; // H?u t? ++: in x r?i m?i gi?m (5), x bây gi? = 6
-    cout << "--y = " << --y << endl; // Ti?n t? ++: gi?m y trı?c r?i in (3)
+    // ToÃ¡n tá»­ so sÃ¡nh
+    if(x == y) cout << "x báº±ng y" << endl;
+    if(x != y) cout << "x khÃ¡c y" << endl;
+    if(x > y) cout << "x lá»›n hÆ¡n y" << endl;
+    if(x < y) cout << "x nhá» hÆ¡n y" << endl;
+    if(x >= y) cout << "x lá»›n hÆ¡n hoáº·c báº±ng y" << endl;
+    if(x <= y) cout << "x nhá» hÆ¡n hoáº·c báº±ng y" << endl;
 
-    // ===============================
-    // 2?? SO SÁNH (Comparison Operators)
-    // ===============================
-    // Toán t?: ==, !=, <, >, <=, >=
-    if (x == y) {
-        cout << "x b?ng y" << endl;  // Ki?m tra x có b?ng y không
-    }
-    if (x != y) {
-        cout << "x khác y" << endl;  // Ki?m tra x có khác y không
-    }
-    if (x > y) {
-        cout << "x l?n hõn y" << endl;
-    }
-    if (x < y) {
-        cout << "x nh? hõn y" << endl;
-    }
-    if (x >= y) {
-        cout << "x l?n hõn ho?c b?ng y" << endl;
-    }
-    if (x <= y) {
-        cout << "x nh? hõn ho?c b?ng y" << endl;
-    }
-
-    // ===============================
-    // 3?? LOGIC (Logical Operators)
-    // ===============================
-    // Toán t?: && (AND), || (OR), ! (NOT)
-    if (x > 0 && y > 0) {   // AND: ğúng n?u x>0 **và** y>0
-        cout << "C? x và y ğ?u dıõng" << endl;
-    }
-
-    if (x > 0 || y < 0) {   // OR: ğúng n?u x>0 **ho?c** y<0
-        cout << "Ít nh?t m?t ği?u ki?n ğúng" << endl;
-    }
-
-    if (!(x < 0)) {         // NOT: ğ?o giá tr? ği?u ki?n, x<0 là false ? !false = true
-        cout << "x không âm" << endl;
-    }
+    // ToÃ¡n tá»­ logic
+    if(x > 0 && y > 0) cout << "Cáº£ x vÃ  y Ä‘á»u dÆ°Æ¡ng" << endl; // AND
+    if(x > 0 || y < 0) cout << "Ãt nháº¥t 1 Ä‘iá»u kiá»‡n Ä‘Ãºng" << endl; // OR
+    if(!(x < 0)) cout << "x khÃ´ng Ã¢m" << endl; // NOT
 
     return 0;
-}  */
+}
+*/
 
-// 4. Ği?u Ki?n
-/* #include <iostream>
+
+// 4. ÄIá»€U KIá»†N
+/*
+#include <iostream>
 using namespace std;
 
 int main() {
-    // ===============================
-    // 1?? C?U TRÚC IF - ELSE
-    // ===============================
-    int x = -5; // Ví d? giá tr? x
+    int x = -5;
 
-    // Câu l?nh if ki?m tra ği?u ki?n
-    if (x > 0) { 
-        // N?u x l?n hõn 0 th? th?c hi?n kh?i l?nh này
-        cout << "Duong" << endl;  // In ra "Duong" (dıõng)
-    }
-    else if (x == 0) {
-        // N?u ği?u ki?n if trı?c sai và x b?ng 0
-        cout << "Zero" << endl;   // In ra "Zero" (0)
-    }
-    else {
-        // N?u t?t c? ği?u ki?n trên sai (x < 0)
-        cout << "Am" << endl;     // In ra "Am" (âm)
-    }
+    // If - else
+    if(x > 0) cout << "DÆ°Æ¡ng" << endl;
+    else if(x == 0) cout << "Zero" << endl;
+    else cout << "Ã‚m" << endl;
 
-    // ===============================
-    // 2?? C?U TRÚC SWITCH - CASE
-    // ===============================
-    int day = 2; // Ví d?: 1 = Monday, 2 = Tuesday, ...
-
+    // Switch-case
+    int day = 2;
     switch(day) {
-        case 1: 
-            // N?u day = 1, th?c hi?n kh?i l?nh này
-            cout << "Mon" << endl;
-            break;  // K?t thúc switch, không ch?y ti?p các case khác
-
-        case 2: 
-            // N?u day = 2
-            cout << "Tue" << endl;
-            break;  
-
-        // B?n có th? thêm case 3, 4, ... 7 cho các ngày c?n l?i
-
-        default: 
-            // N?u day không kh?p v?i b?t k? case nào
-            cout << "Other" << endl;
+        case 1: cout << "Mon" << endl; break;
+        case 2: cout << "Tue" << endl; break;
+        default: cout << "Other" << endl;
     }
 
     return 0;
-}   */
+}
+*/
 
-// 5. V?ng L?p
-/* #include <iostream>
+
+// 5. VÃ’NG Láº¶P
+/*
+#include <iostream>
 using namespace std;
 
 int main() {
-    // ===============================
-    // 1?? V?NG L?P FOR
-    // ===============================
-    // Cú pháp: for(initialization; condition; update)
-    // Thı?ng dùng khi bi?t trı?c s? l?n l?p
-    cout << "Vong lap FOR: ";
-    for (int i = 0; i < 10; i++) {
-        // i = 0: kh?i t?o bi?n i
-        // i < 10: ği?u ki?n l?p
-        // i++: tãng i sau m?i v?ng l?p
-        cout << i << " ";  // in ra giá tr? hi?n t?i c?a i
+    // FOR
+    cout << "VÃ²ng láº·p FOR: ";
+    for(int i=0; i<10; i++) cout << i << " ";
+    cout << endl;
+
+    // WHILE
+    int n = 5;
+    cout << "VÃ²ng láº·p WHILE: ";
+    while(n > 0) {
+        cout << n << " ";
+        n--;
     }
     cout << endl;
 
-    // ===============================
-    // 2?? V?NG L?P WHILE
-    // ===============================
-    // Cú pháp: while(condition) { body }
-    // L?p l?i **mi?n là ği?u ki?n ğúng**
-    int n = 5;  // Ví d? giá tr? n ban ğ?u
-    cout << "Vong lap WHILE: ";
-    while (n > 0) {
-        cout << n << " ";  // in ra n hi?n t?i
-        n--;               // gi?m n 1 ğõn v? sau m?i v?ng
-    }
-    cout << endl;
-
-    // ===============================
-    // 3?? V?NG L?P DO-WHILE
-    // ===============================
-    // Cú pháp: do { body } while(condition)
-    // Khác while: **th?c hi?n ít nh?t 1 l?n** trı?c khi ki?m tra ği?u ki?n
-    n = 3;  // reset n ğ? th? do-while
-    cout << "Vong lap DO-WHILE: ";
+    // DO-WHILE
+    n = 3;
+    cout << "VÃ²ng láº·p DO-WHILE: ";
     do {
-        cout << n << " ";  // in ra n
-        n--;               // gi?m n
-    } while (n > 0);       // ki?m tra ği?u ki?n sau m?i l?n l?p
+        cout << n << " ";
+        n--;
+    } while(n > 0);
     cout << endl;
 
     return 0;
-}  */
+}
+*/
 
-// 6. Nh?p xu?t D? Li?u
-/* #include <iostream>   // Thı vi?n chu?n cho input/output
+
+// 6. NHáº¬P XUáº¤T Dá»® LIá»†U
+/*
+#include <iostream>
 using namespace std;
 
 int main() {
-    // ===============================
-    // 1?? KHAI BÁO BI?N
-    // ===============================
-    int age;  // Khai báo bi?n ki?u s? nguyên ğ? lıu tu?i ngı?i dùng
+    int age;
+    cout << "Nháº­p tuá»•i: ";
+    cin >> age;
+    cout << "Báº¡n " << age << " tuá»•i." << endl;
 
-    // ===============================
-    // 2?? NH?P D? LI?U (Input)
-    // ===============================
-    cout << "Nhap tuoi: "; // In ra thông báo yêu c?u ngı?i dùng nh?p tu?i
-    cin >> age;             // Nh?n d? li?u t? bàn phím và gán vào bi?n 'age'
-    // Lıu ?: n?u ngı?i dùng nh?p giá tr? không ph?i s? nguyên ? x?y ra l?i input
+    return 0;
+}
+*/
 
-    // ===============================
-    // 3?? XU?T D? LI?U (Output)
-    // ===============================
-    cout << "Ban " << age << " tuoi." << endl;
-    // Gi?i thích:
-    // "Ban "           -> chu?i c? ğ?nh in ra
-    // << age <<         -> giá tr? bi?n age ğı?c n?i vào chu?i
-    // " tuoi."         -> chu?i c? ğ?nh ti?p theo
-    // << endl           -> xu?ng d?ng và flush buffer
 
-    return 0;  // K?t thúc chıõng tr?nh
-} */
-
-// 7. Hàm
-/* #include <iostream>   // Thı vi?n chu?n cho input/output
+// 7. HÃ€M
+/*
+#include <iostream>
 using namespace std;
-// ===============================
-// 1?? Ğ?NH NGH?A HÀM (Function Definition)
-// ===============================
-// Cú pháp: <ki?u tr? v?> <tên hàm>(<tham s?>) { body }
-// Hàm 'cong' nh?n 2 s? nguyên và tr? v? t?ng c?a chúng
+
 int cong(int a, int b) {
-    // a, b là các tham s? ğ?u vào c?a hàm
-    return a + b;  // Tr? v? k?t qu? là t?ng c?a a và b
+    return a + b;
 }
 
-// ===============================
-// 2?? HÀM MAIN
-// ===============================
 int main() {
-    // G?i hàm cong v?i tham s? 3 và 4
-    // Hàm s? tr? v? 3 + 4 = 7
-    cout << cong(3, 4) << endl;  // In k?t qu? ra màn h?nh
-    return 0;  // K?t thúc chıõng tr?nh, chıõng tr?nh ch?y thành công
-}  */
+    cout << cong(3, 4) << endl; // In ra 7
+    return 0;
+}
+*/
 
-// 8. M?ng & Chu?i
-/* #include <iostream>   // Thı vi?n chu?n cho input/output
-#include <string>     // Thı vi?n cho ki?u d? li?u string
+
+// 8. Máº¢NG & CHUá»–I
+/*
+#include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
-    // ===============================
-    // 1?? M?NG (Array)
-    // ===============================
-    // Khai báo m?t m?ng s? nguyên g?m 5 ph?n t?
-    int arr[5] = {1, 2, 3, 4, 5};
+    // Máº£ng
+    int arr[5] = {1,2,3,4,5};
+    cout << "Pháº§n tá»­ Ä‘áº§u tiÃªn: " << arr[0] << endl;
 
-    // Truy c?p ph?n t? ğ?u tiên c?a m?ng
-    cout << "Phan tu dau tien cua arr: " << arr[0] << endl;  
-    // arr[0] = 1
-    // Lıu ?: ch? s? m?ng trong C++ b?t ğ?u t? 0
-    // arr[1] = 2, arr[2] = 3, ...
-
-    // ===============================
-    // 2?? CHU?I (String)
-    // ===============================
-    // Khai báo chu?i k? t?
+    // Chuá»—i
     string name = "Tin";
+    cout << "Äá»™ dÃ i: " << name.size() << endl;
+    cout << "KÃ½ tá»± Ä‘áº§u: " << name[0] << endl;
 
-    // L?y ğ? dài chu?i
-    cout << "Do dai chuoi name: " << name.size() << endl;  
-    // name.size() = 3 (v? "Tin" có 3 k? t?)
+    return 0;
+}
+*/
 
-    // Truy c?p k? t? ğ?u tiên trong chu?i
-    cout << "Ky tu dau tien cua name: " << name[0] << endl;  
-    // name[0] = 'T'
 
-    return 0;  // K?t thúc chıõng tr?nh
-}  */
-
-// 9. Con tr?
-/* #include <iostream>
+// 9. CON TRá»
+/*
+#include <iostream>
 using namespace std;
 
 int main() {
-    // ===============================
-    // 1?? KHAI BÁO BI?N THÔNG THİ?NG
-    // ===============================
-    int a = 10;  // Bi?n s? nguyên a, lıu giá tr? 10
+    int a = 10;
+    int *p = &a;
+    cout << "GiÃ¡ trá»‹ a = " << *p << endl;
+    cout << "Äá»‹a chá»‰ a = " << p << endl;
 
-    // ===============================
-    // 2?? KHAI BÁO CON TR? (Pointer)
-    // ===============================
-    int *p = &a;  // p là con tr? ki?u int, tr? ğ?n ğ?a ch? c?a a
-                   // &a ? ğ?a ch? c?a bi?n a
-                   // int *p ? khai báo p là con tr? ğ?n int
+    return 0;
+}
+*/
 
-    // ===============================
-    // 3?? TRUY C?P GIÁ TR? QUA CON TR?
-    // ===============================
-    cout << "Gia tri cua a = " << *p << endl;
-    // *p ? dereference (truy c?p giá tr? mà con tr? p ğang tr? t?i), N?u a = 10, *p = 10
-    // K?t qu?: 10
 
-    // ===============================
-    // 4?? IN Ğ?A CH? C?A BI?N
-    // ===============================
-    cout << "Dia chi cua a = " << p << endl;
-    // p lıu ğ?a ch? c?a a
-
-    return 0;  // K?t thúc chıõng tr?nh
-} */
-
-// 10. Struct & Class
-/* #include <iostream>
-#include <string>   // Thı vi?n cho ki?u string
+// 10. STRUCT & CLASS
+/*
+#include <iostream>
+#include <string>
 using namespace std;
-// ===============================
-// 1?? C?U TRÚC (Struct)
-// ===============================
-// Struct dùng ğ? nhóm các bi?n liên quan thành m?t ki?u d? li?u
+
 struct SinhVien {
-    string ten;   // Tên sinh viên
-    int tuoi;     // Tu?i sinh viên
+    string ten;
+    int tuoi;
 };
 
-// ===============================
-// 2?? L?P (Class)
-// ===============================
-// Class dùng ğ? t?o ğ?i tı?ng v?i bi?n (thu?c tính) và hàm (phıõng th?c)
 class Animal {
-public:  // Ph?n public có th? truy c?p t? bên ngoài
-    string name;   // Thu?c tính: tên con v?t
-
-    // Phıõng th?c (method)
-    void speak() {    //void trı?c tên hàm - Hàm ko tr? v? giá tr? ; void* - con tr? ğ?n vùng nh? b?t k? d? li?u nào ; void trong tham s? - hàm ko nh?n tham s?
-        cout << "Hello, I am " << name << endl;  
-        // Khi g?i, in ra câu chào kèm tên con v?t
-    }
+public:
+    string name;
+    void speak() { cout << "Hello, I am " << name << endl; }
 };
 
 int main() {
-    // ===============================
-    // S? D?NG STRUCT
-    // ===============================
-    SinhVien sv;           // T?o bi?n sv ki?u SinhVien
-    sv.ten = "Tin";        // Gán tên
-    sv.tuoi = 20;          // Gán tu?i
+    SinhVien sv;
+    sv.ten = "Tin";
+    sv.tuoi = 20;
     cout << sv.ten << " " << sv.tuoi << endl;
 
-    // ===============================
-    // S? D?NG CLASS
-    // ===============================
-    Animal dog;            // T?o ğ?i tı?ng dog ki?u Animal
-    dog.name = "Buddy";    // Gán tên
-    dog.speak();           // G?i phıõng th?c speak() ? in ra: Hello, I am Buddy
+    Animal dog;
+    dog.name = "Buddy";
+    dog.speak();
 
     return 0;
-}  */
+}
+*/
 
-// 11. Tính th?a k? và ğa h?nh
-/* #include <iostream>
+
+// 11. TÃNH THá»ªA Káº¾ & ÄA HÃŒNH
+/*
+#include <iostream>
 using namespace std;
 
-// ===============================
-// 1?? L?P CÕ S? (Base Class)
-// ===============================
 class Animal {
 public:
-    // Hàm ?o (virtual function)
-    // Giúp cho các l?p k? th?a có th? **ghi ğè** (override) hành vi
-    virtual void sound() {  
-        cout << "Animal sound" << endl;  
-    }
+    virtual void sound() { cout << "Animal sound" << endl; }
 };
 
-// ===============================
-// 2?? L?P K? TH?A (Derived Class)
-// ===============================
-class Dog : public Animal {  // Dog k? th?a t? Animal
+class Dog : public Animal {
 public:
-    // Ghi ğè hàm sound() c?a l?p cõ s?
-    void sound() override {  
-        // t? khóa 'override' giúp compiler ki?m tra ğúng ghi ğè
-        cout << "Woof" << endl;  
-    }
+    void sound() override { cout << "Woof" << endl; }
 };
 
 int main() {
-    // ===============================
-    // 3?? T?O Ğ?I Tİ?NG
-    // ===============================
-    Animal a;   // ğ?i tı?ng l?p cõ s?
-    Dog d;      // ğ?i tı?ng l?p k? th?a
+    Animal a;
+    Dog d;
+    a.sound();
+    d.sound();
 
-    // G?i hàm sound()
-    a.sound();  // In ra: Animal sound
-    d.sound();  // In ra: Woof
-
-    // ===============================
-    // 4?? S? D?NG POLYMORPHISM (ĞA H?NH)
-    // ===============================
-    Animal* ptr = &d;   // con tr? l?p cõ s? tr? ğ?n ğ?i tı?ng l?p k? th?a
-    ptr->sound();       // In ra: Woof (nh? virtual function)
+    Animal* ptr = &d;
+    ptr->sound(); // Woof nhá» virtual
 
     return 0;
-}  */
+}
+*/
 
-// 12. Thı vi?n chu?n(STL)
-/* #include <iostream>
-#include <vector>    // Thı vi?n cho vector
-#include <map>       // Thı vi?n cho map
-#include <algorithm> // Thı vi?n cho các thu?t toán STL (sort, find, ...) 
+
+// 12. THÆ¯ VIá»†N CHUáº¨N STL
+/*
+#include <iostream>
+#include <vector>
+#include <map>
+#include <algorithm>
 using namespace std;
 
 int main() {
-    // ===============================
-    // 1?? VECTOR (M?ng ğ?ng)
-    // ===============================
-    // Khai báo vector s? nguyên và kh?i t?o giá tr?
-    vector<int> v = {1, 2, 3};  
+    vector<int> v = {1,2,3};
+    v.push_back(4);
 
-    // Thêm ph?n t? vào cu?i vector
-    v.push_back(4);  
-    // v bây gi? là: {1, 2, 3, 4}
-
-    // Duy?t vector và in ra các ph?n t?
-    cout << "Vector v: ";
-    for(int i = 0; i < v.size(); i++) {
-        cout << v[i] << " ";
-    }
+    cout << "Vector: ";
+    for(int i=0; i<v.size(); i++) cout << v[i] << " ";
     cout << endl;
 
-    // ===============================
-    // 2?? MAP (B?n ğ?, key-value)
-    // ===============================
-    // Khai báo map v?i key ki?u string, value ki?u int
-    map<string, int> m;
-
-    // Gán giá tr? cho key "Tin"
+    map<string,int> m;
     m["Tin"] = 20;
+    cout << "Gia tri m[\"Tin\"] = " << m["Tin"] << endl;
 
-    // Truy xu?t giá tr? theo key
-    cout << "Gia tri cua m[\"Tin\"]: " << m["Tin"] << endl;
-
-    // Duy?t map
-    cout << "Cac phan tu trong map:" << endl;
-    for(auto it = m.begin(); it != m.end(); ++it) {     
-        cout << it->first << " : " << it->second << endl; //it->first -->key(Duy?t map iterator), it->second-->value
-    }
+    for(auto it=m.begin(); it!=m.end(); ++it)
+        cout << it->first << " : " << it->second << endl;
 
     return 0;
-}   */
+}
+*/
 
-// 13. X? L? File
-/* #include <iostream>   // Thı vi?n chu?n cho input/output
-#include <fstream>    // Thı vi?n cho ğ?c/ghi file
-#include <string>     // Thı vi?n cho ki?u string
+
+// 13. Xá»¬ LÃ FILE
+/*
+#include <iostream>
+#include <fstream>
+#include <string>
 using namespace std;
+
 int main() {
-    // ===============================
-    // 1?? GHI FILE (ofstream)
-    // ===============================
-    // T?o ğ?i tı?ng ofstream ğ? ghi vào file "data.txt"
-    ofstream out("data.txt");  
-
-    if (!out) {  // Ki?m tra xem file có m? thành công không
-        cerr << "Khong the mo file de ghi!" << endl;
-        return 1;
-    }
-
-    // Ghi d? li?u vào file
-    out << "Hello file\n";  // Thêm d?ng "Hello file" vào file
-    out << "Day la dong thu 2\n"; // Ghi thêm d?ng th? 2
-
-    // Ğóng file sau khi ghi xong
+    ofstream out("data.txt");
+    if(!out) { cerr << "KhÃ´ng má»Ÿ file ghi!" << endl; return 1; }
+    out << "Hello file\nDay la dong thu 2\n";
     out.close();
 
-    // ===============================
-    // 2?? Ğ?C FILE (ifstream)
-    // ===============================
-    // T?o ğ?i tı?ng ifstream ğ? ğ?c file "data.txt"
-    ifstream in("data.txt");  
-
-    if (!in) {  // Ki?m tra xem file có m? thành công không
-        cerr << "Khong the mo file de doc!" << endl;
-        return 1;
-    }
-
-    string line;  // Bi?n lıu t?ng d?ng ğ?c ğı?c
-    cout << "Noi dung file data.txt:\n";
-    // Ğ?c t?ng d?ng trong file cho ğ?n khi h?t
-    while (getline(in, line)) {
-        cout << line << endl;  // In t?ng d?ng ra màn h?nh
-    }
-
-    // Ğóng file sau khi ğ?c xong
+    ifstream in("data.txt");
+    if(!in) { cerr << "KhÃ´ng má»Ÿ file Ä‘á»c!" << endl; return 1; }
+    string line;
+    cout << "Noi dung file:\n";
+    while(getline(in,line)) cout << line << endl;
     in.close();
 
-    return 0;  // K?t thúc chıõng tr?nh
-}  */
+    return 0;
+}
+*/
 
-// 14. Ngo?i L?
-/* #include <iostream>
+
+// 14. NGOáº I Lá»†
+/*
+#include <iostream>
 using namespace std;
 
 int main() {
-    // ===============================
-    // 1?? TRY BLOCK
-    // ===============================
-    // Kh?i try dùng ğ? "th?" ch?y các câu l?nh có th? gây l?i
     try {
-        // Ném (throw) m?t ngo?i l?
-        throw 123;  
-        // Khi throw ğı?c g?i, chıõng tr?nh s? nh?y ngay sang catch tıõng ?ng
-        // 123 là giá tr? c?a ngo?i l?, ki?u int
+        throw 123;
+    } catch(int e) {
+        cout << "Lá»—i: " << e << endl;
     }
 
-    // ===============================
-    // 2?? CATCH BLOCK
-    // ===============================
-    // Kh?i catch dùng ğ? "b?t" ngo?i l?
-    catch (int e) {
-        // int e ? bi?n lıu giá tr? ngo?i l? ğı?c ném ra
-        cout << "Loi: " << e << endl;  // In ra l?i: 123
-    }
-
-    // ===============================
-    // 3?? K?T THÚC
-    // ===============================
-    cout << "Chuong trinh tiep tuc chay binh thuong." << endl;
-
+    cout << "ChÆ°Æ¡ng trÃ¬nh tiáº¿p tá»¥c cháº¡y bÃ¬nh thÆ°á»ng." << endl;
     return 0;
-}  */
+}
+*/
 
-// ---------------------------------------------------------End--------------------------------------------------------------
-
-
-
-
-
-
+// -------------------------- End --------------------------
